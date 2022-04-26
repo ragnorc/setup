@@ -1,0 +1,43 @@
+[user]
+	name = Michael Sanders
+	email = michael.sanders@fastmail.com
+[commit]
+	gpgsign = true
+[core]
+	excludesfile = ~/.gitignore
+	pager = delta
+	whitespace = trailing-space,space-before-tab
+[credential]
+	helper = osxkeychain
+[delta]
+	syntax-theme = zenburn
+[init]
+	templatedir = ~/.git_template
+[interactive]
+    difffilter = delta --color-only
+[difftool]
+	prompt = false
+[merge]
+	tool = opendiff
+[mergetool]
+	keepBackup = false
+	prompt = false
+[alias]
+	eeny = add --patch
+	graph = log --oneline --decorate --graph
+	gtags = !.git/hooks/gtags
+	lastsha = !git rev-parse HEAD | cut -c1-7
+	pushd = push -u origin HEAD
+	redate = rebase --committer-date-is-author-date
+	restart = switch --force-create
+	revise = commit --amend --date=now
+	smuggle = "!CDATE=$(git show -s --date=iso --format=%cd @); GIT_COMMITTER_DATE=$CDATE GIT_AUTHOR_DATE=$CDATE git commit --amend --reset-author"
+	staged = diff --staged
+	start = switch --create
+	unpushed = log --oneline --decorate --graph @{upstream}..
+	unstage = reset HEAD
+	unstaged = diff
+[web]
+	browser = open
+[rebase]
+	autoStash = true

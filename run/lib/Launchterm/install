@@ -1,0 +1,32 @@
+#!/bin/sh
+set -o errexit -o nounset
+
+AGENT_DIR="$HOME/Library/LaunchAgents"
+DOMAIN="org.mksanders.Launchterm"
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+TARGET="Launchterm"
+USER="$(whoami)"
+
+PLIST="$AGENT_DIR/$DOMAIN.plist"
+SUPPORT_DIR="$HOME/Library/Application Support/$TARGET"
+
+main() (
+    mkdir -p "$SUPPORT_DIR"
+    mkdir -p "$AGENT_DIR"
+
+    cd "$SCRIPT_DIR"
+    echo "Building Launchterm..."
+    swift build -c release -Xswiftc -Osize
+    cp .build/release/Launchterm "$SUPPORT_DIR/$TARGET"
+    strip "$SUPPORT_DIR/$TARGET"
+    sed -e "s/{USER}/$USER/" "$SCRIPT_DIR/$DOMAIN.template.plist" > "$PLIST"
+
+    if launchctl list | grep -Fq "$DOMAIN"; then
+        launchctl unload "$PLIST" 2>/dev/null
+    fi
+
+    launchctl load -w "$PLIST"
+    echo "Installed $TARGET."
+)
+
+main

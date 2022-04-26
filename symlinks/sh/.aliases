@@ -1,0 +1,122 @@
+# -*- mode: sh -*- vim:ft=sh
+
+# Format bash script.
+alias bashfmt="shfmt -s -i=4 -ci -ln=bash"
+
+# Shorthand to use syntax highlighted diff output.
+alias cdiff="sh -c 'diff -u \"\$0\" \"\$1\" | delta'"
+
+# Prefer bat over cat.
+alias cat="bat"
+
+ # Change to path shown in Finder.
+alias cdfinder='fish -c "cd (finderpath)"'
+
+# Print path currently shown in Finder.
+alias finderpath="osascript -e 'tell app \"Finder\" to POSIX path of (insertion location as alias)'"
+
+# Hide a file from Finder on macOS.
+alias hide="chflags hidden"
+
+# Format HTML file.
+alias htmlfmt="tidy -ashtml --indent auto --indent-spaces 4 --tidy-mark no -utf8 --wrap 0"
+
+# Lock file on macOS.
+alias lock="sudo chflags uchg"
+
+# Open repo in Magit.
+alias magit='emacsclient --eval "(magit-status)" --suppress-output && open -a Emacs'
+
+# Format POSIX shell script.
+alias pshfmt="shfmt -s -i=4 -ci -ln=posix"
+
+# Restart Wi-Fi on macOS.
+alias restartwifi="sudo ifconfig en0 down; sudo ifconfig en0 up"
+
+# fd is set to escape into normal mode on my shell with modal editing enabled.
+alias rf="fd"
+
+# Print human-readable size of file or directory.
+alias sizeof="du -sh"
+
+# Safely edit a file as root.
+alias sudoedit="sudo --edit"
+
+# Immediately set display to sleep.
+alias snooze="pmset displaysleepnow"
+
+# Shorthand to fully format a Swift file / directory.
+alias swiftfmt="sh -c 'swiftlint autocorrect \"\$0\" && swiftformat \"\$0\"'"
+
+# Unhide a file from Finder on macOS.
+alias unhide="chflags nohidden"
+
+# Unlock a file on macOS.
+alias unlock="sudo chflags nouchg"
+
+# Confirm machine is connected to Internet (Google).
+alias up="ping 8.8.8.8"
+
+# Prefer Neovim over Vim.
+alias vim="nvim"
+
+# Print current IP address.
+alias whatismyip="dig +short myip.opendns.com @resolver1.opendns.com"
+
+
+#########################################
+# Sites                                 #
+#########################################
+
+alias docs="cd ~/Documents/"
+alias dl="cd ~/Downloads"
+alias dt="cd ~/Desktop"
+alias work="cd ~/work"
+
+#########################################
+# Quick config                          #
+#########################################
+alias zshconfig="$EDITOR ~/.zshrc"
+alias ohmyzsh="$EDITOR ~/.oh-my-zsh"
+alias ssource='source ~/.zshrc'
+
+#########################################
+# Shorten common commands               #
+#########################################
+alias h="history"
+alias "cd.."="cd .."
+alias c="cd"
+alias g="git"
+alias gs="git status"
+alias gcm="git commit -m"
+alias e="$EDITOR ."
+alias lss="ls -Gal"
+alias lp="ls -p"
+
+#########################################
+# Hide / Show files                     #
+#########################################
+alias unhidelibrary="chflags nohidden ~/Library"
+alias showdotfiles="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
+alias hidedotfiles="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
+alias hide="chflags hidden $0"
+alias unhide="chflags nohidden $0"
+
+#########################################
+# File cleanup                          #
+#########################################
+alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
+alias lscleanup="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user && killall Finder"
+
+#########################################
+# Volum Control - http://xkcd.com/530/  #
+#########################################
+alias stfu="osascript -e 'set volume output muted true'"
+alias pumpitup="osascript -e 'set volume 10'"
+
+#########################################
+# IP / Speedtest                        #
+#########################################
+alias ip="curl ipinfo.io/ip"
+alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
+alias stest="wget -O /dev/null http://speedtest.wdc01.softlayer.com/downloads/test10.zip"

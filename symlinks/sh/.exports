@@ -1,0 +1,26 @@
+#########################################
+# Homebrew                              #
+#########################################
+export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+export HOMEBREW_NO_ANALYTICS=1
+
+
+#########################################
+# History                               #
+#########################################
+export HISTSIZE=32768; # Larger bash history (allow 32³ entries; default is 500)
+export HISTFILESIZE=$HISTSIZE;
+export HISTCONTROL=ignoredups;
+export HISTIGNORE="ls:cd:cd -:pwd:exit:date:* --help"; # Make some commands not show up in history
+
+
+#########################################
+# Language                              #
+#########################################
+export LANG="en_GB.UTF-8";
+export LC_ALL="en_GB.UTF-8";
+
+#########################################
+# Config set                            #
+#########################################
+export EDITOR="nano";
