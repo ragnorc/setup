@@ -2,31 +2,17 @@
 # See:
 # - https://posts.mksanders.org/instant-pyenv-rbenv-startup-times-with-tmux
 # - https://posts.mksanders.org/faster-fish-startup-times
-if status is-login
-    # pyenv
-    if command -v pyenv >/dev/null
-        pyenv init - --no-rehash fish | source
-        and funcsave pyenv
-        and sh -c 'pyenv rehash 2>/dev/null &'
-    end
 
-    # rbenv
-    if command -v rbenv >/dev/null
-        rbenv init - --no-rehash fish | source
-        and funcsave rbenv
-        and sh -c 'rbenv rehash 2>/dev/null &'
-    end
+if test -f (brew --prefix asdf)/asdf.fish
+  source (brew --prefix asdf)/asdf.fish
+end
 
-    set --export DEVELOPER_DIR "/Applications/Xcode.app/Contents/Developer"
-    set --export EDITOR "emc"
     set --export GTAGSLABEL "pygments"
     set --export HOMEBREW_AUTO_UPDATE_SECS 86400
     set --export LANG en_US.UTF-8
     set --export LANGUAGE en_US.UTF-8
     set --export LC_ALL en_US.UTF-8
     set --export MANPAGER "sh -c 'col -bx | bat -l man -p'"
-    set --export PATH "$HOME/bin" "$HOME/.local/bin" "$HOME/.cargo/bin" "$HOME/.cask/bin" \
-                      "$HOME/.emacs.d/bin" "/usr/local/opt/emacs-mac/bin" $PATH
     
     set --export SHELLCHECK_OPTS "--external-sources"
 
