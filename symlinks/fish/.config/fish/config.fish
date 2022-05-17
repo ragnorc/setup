@@ -27,10 +27,13 @@ if status is-login
     set --export MANPAGER "sh -c 'col -bx | bat -l man -p'"
     set --export PATH "$HOME/bin" "$HOME/.local/bin" "$HOME/.cargo/bin" "$HOME/.cask/bin" \
                       "$HOME/.emacs.d/bin" "/usr/local/opt/emacs-mac/bin" $PATH
-    set --export PYENV_ROOT "$HOME/.pyenv"
+    
     set --export SHELLCHECK_OPTS "--external-sources"
 
     if status is-interactive
+        if test -f $HOME/.paths
+            source $HOME/.paths
+        end
         if test -f $HOME/.aliases
             source $HOME/.aliases
 
@@ -49,10 +52,6 @@ if status is-login
             end
         end
 
-        # Enable hybrid vi/emacs bindings.
-        if ! test "$fish_key_bindings" = "fish_hybrid_key_bindings"
-            fish_hybrid_key_bindings
-        end
     end
 end
 
