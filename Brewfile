@@ -59,9 +59,6 @@ brew "glslang"
 # Terminal interface for viewing git repositories
 brew "grv"
 
-# GNU Ubiquitous Intelligent Language for Extensions
-brew "guile"
-
 # Mac App Store command-line interface
 brew "mas"
 
@@ -89,9 +86,6 @@ brew "renameutils"
 
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
-
-# Experimental Rust compiler front-end for IDEs
-brew "rust-analyzer"
 
 # Intuitive find & replace CLI
 brew "sd"
