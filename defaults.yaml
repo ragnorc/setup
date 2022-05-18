@@ -6,14 +6,14 @@ NSGlobalDomain:
   # System Preferences > General > Sidebar icon size > Large.
   NSTableViewDefaultSizeMode: 3
 
-  KeyRepeat: 1
+  KeyRepeat: 0
+  InitialKeyRepeat: 5
 
   com.apple.mouse.tapBehavior: 1
 
   com.apple.trackpad.enableSecondaryClick: true
   com.apple.trackpad.trackpadCornerClickBehavior: 1
 
-  AppleLanguages: ["en", "nl", "de", "fr", "es", "it"]
   AppleMeasurementUnits: "Centimeter"
   AppleMetricUnits: true
 
@@ -31,6 +31,8 @@ NSGlobalDomain:
   NSDocumentSaveNewDocumentsToCloud: false
 
   NSAutomaticCapitalizationEnabled: false
+
+  AppleEnableSwipeNavigateWithScrolls: false
 
 com.apple.desktopservices:
   # Disable .DS_Store files on network drives.
@@ -112,10 +114,6 @@ com.apple.TextEdit:
 com.apple.Terminal:
   # Terminal > Secure Keyboard Entry.
   SecureKeyboardEntry: true
-
-  # Set custom theme as default.
-  "Default Window Settings": Zenburn
-  "Startup Window Settings": Zenburn
 
 com.apple.SoftwareUpdate:
   # System Preferences > Software Update > Advanced... > Automatically check
