@@ -6,8 +6,8 @@
 if test -f (brew --prefix asdf)/asdf.fish
   source (brew --prefix asdf)/asdf.fish
 end
+	
 
-    set --export GTAGSLABEL "pygments"
     set --export HOMEBREW_AUTO_UPDATE_SECS 86400
     set --export LANG en_US.UTF-8
     set --export LANGUAGE en_US.UTF-8
@@ -16,10 +16,12 @@ end
     
     set --export SHELLCHECK_OPTS "--external-sources"
 
+if status is-login
+    	fish_add_path -P $HOME/.bin $HOME/.dotfiles/.bin $HOME/.cargo/bin $HOME/.yarn/bin /usr/local/bin "/Applications/Visual Studio Code.app/Contents/Resources/app/bin" /opt/homebrew/opt/openssl@3/bin
+
+
     if status is-interactive
-        if test -f $HOME/.paths
-            source $HOME/.paths
-        end
+
         if test -f $HOME/.aliases
             source $HOME/.aliases
 

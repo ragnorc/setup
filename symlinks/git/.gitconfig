@@ -2,7 +2,7 @@
 	name = Ragnor Comerford
 	email = ragnor.comerford@gmail.com
 [commit]
-	gpgsign = true
+	gpgsign = false
 [core]
 	excludesfile = ~/.gitignore
 	pager = delta
@@ -25,7 +25,6 @@
 [alias]
 	eeny = add --patch
 	graph = log --oneline --decorate --graph
-	gtags = !.git/hooks/gtags
 	lastsha = !git rev-parse HEAD | cut -c1-7
 	pushd = push -u origin HEAD
 	redate = rebase --committer-date-is-author-date

@@ -17,6 +17,7 @@ NSGlobalDomain:
   AppleMeasurementUnits: "Centimeter"
   AppleMetricUnits: true
 
+  AppleShowAllFiles: true
   # Press and hold character picker.
   ApplePressAndHoldEnabled: true
 

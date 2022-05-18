@@ -17,23 +17,11 @@ brew "bash"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
 
-# Reimplementation of ctags(1)
-brew "ctags"
-
 # Tool for managing dock items
 brew "dockutil"
 
 # Select default apps for documents and URL schemes on macOS
 brew "duti"
-
-# Maintain consistent coding style between multiple editors
-brew "editorconfig"
-
-# Functional programming language for building browser-based GUIs
-brew "elm"
-
-# Elm source code formatter, inspired by gofmt
-brew "elm-format"
 
 # Modern replacement for 'ls'
 brew "exa"
@@ -50,15 +38,6 @@ brew "git"
 # Syntax-highlighting pager for git and diff output
 brew "git-delta"
 
-# Source code tag system
-brew "global"
-
-# OpenGL and OpenGL ES reference compiler for shading languages
-brew "glslang"
-
-# Terminal interface for viewing git repositories
-brew "grv"
-
 # Mac App Store command-line interface
 brew "mas"
 
@@ -67,7 +46,6 @@ brew "mosh"
 
 # Swiss-army knife of markup format conversion
 brew "pandoc"
-
 
 # Search PDFs for strings matching a regular expression
 brew "pdfgrep"
@@ -99,12 +77,10 @@ brew "shfmt"
 # Organize software neatly under a single directory tree (e.g. /usr/local)
 brew "stow"
 
-
-# Very fast implementation of tldr in Rust
-brew "tealdeer"
-
 # Terminal multiplexer
 brew "tmux"
+
+brew "gcc"
 
 # Language for application scale JavaScript development
 brew "typescript"
@@ -115,8 +91,6 @@ brew "wget"
 brew "httpie"
 
 brew "hub"
-
-brew "poetry"
 
 brew "pulumi"
 
@@ -135,8 +109,6 @@ cask "chromium"
 cask "dash"
 cask "discord"
 cask "firefox"
-cask "font-fira-mono"
-cask "font-fira-mono-for-powerline"
 cask "imageoptim"
 cask "lastpass"
 cask "superhuman"
@@ -158,6 +130,7 @@ cask "setapp"
 cask "raindropio"
 cask "mochi"
 cask "swish"
+cask "warp"
 
 
 

@@ -23,14 +23,24 @@ trap 'rm -rf "$REPOS_DIR"' EXIT
     set +x
 )
 
-echo "Updating Dock..."
 
-set -x
-dockutil --remove all --no-restart
-dockutil --add /Applications/Orion.app --no-restart
-dockutil --add /Applications/Safari.app --no-restart
-dockutil --add ~/Downloads --display stack # Implicitly restarts the Dock.
-set +x
+read -p "Edit /etc/pam.d/sudo to include as the first line: auth sufficient pam_touchid.so 'reason=execute a command as root' and enter Y. " yn
+case $yn in
+    [Yy]* ) echo "yes";;
+    [Nn]* ) exit;;
+    # * ) echo "Please answer yes or no.";;
+esac
+
+
+# Uncomment when dockutil is fixed on Monterrey
+# echo "Updating Dock..."
+
+# set -x
+# dockutil --remove all --no-restart
+# dockutil --add /Applications/Orion.app --no-restart
+# dockutil --add /Applications/Safari.app --no-restart
+# dockutil --add ~/Downloads --display stack # Implicitly restarts the Dock.
+# set +x
 
 
 echo "Resetting QuickLook."

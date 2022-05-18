@@ -63,6 +63,8 @@ alias vim="nvim"
 # Print current IP address.
 alias whatismyip="dig +short myip.opendns.com @resolver1.opendns.com"
 
+alias mfish="arch -arm64 fish"
+alias ifish="arch -x86_64 fish"
 
 #########################################
 # Sites                                 #
