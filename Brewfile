@@ -94,6 +94,8 @@ brew "hub"
 
 brew "pulumi"
 
+brew "tailscale"
+
 brew "minio/stable/mc"
 brew "superfly/tap/flyctl"
 
@@ -131,6 +133,7 @@ cask "raindropio"
 cask "mochi"
 cask "swish"
 cask "warp"
+cask "perimeter81"
 
 
 

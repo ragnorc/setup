@@ -13,6 +13,8 @@ end
     set --export LANGUAGE en_US.UTF-8
     set --export LC_ALL en_US.UTF-8
     set --export MANPAGER "sh -c 'col -bx | bat -l man -p'"
+    # Fix for M1 and HDF5 in Python
+    set --export HDF5_DIR /opt/homebrew/opt/hdf5
     
     set --export SHELLCHECK_OPTS "--external-sources"
 
@@ -47,28 +49,4 @@ if status is-interactive
     # Disable greeting.
     set --export fish_greeting
     function fish_greeting; end
-
-    # Use fd to leave insert mode.
-    function fish_user_key_bindings
-        bind -M insert -m default fd backward-char force-repaint
-    end
-
-    # Disable dated history in bobthefish prompt.
-    set -g theme_display_date no
-
-    # Apply theme.
-    set --export theme_color_scheme zenburn
-    set fish_color_normal normal
-    set fish_color_command ffd700
-    set fish_color_quote normal
-    set fish_color_redirection normal
-    set fish_color_end ffffff
-    set fish_color_error ff5f5f --bold
-    set fish_color_param ffff5f
-    set fish_color_comment 87ffff
-    set fish_color_match cyan
-    set fish_color_search_match ffffff --background=005f00
-    set fish_color_operator cyan
-    set fish_color_escape cyan
-    set fish_color_cwd green
 end
