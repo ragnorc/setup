@@ -134,6 +134,7 @@ cask "mochi"
 cask "swish"
 cask "warp"
 cask "perimeter81"
+cask "airtable"
 
 
 
